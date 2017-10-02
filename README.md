@@ -16,21 +16,21 @@ I assumed a simple model for the types of messages received.
 2. Then there are the vehicle condition sensor data received every 1 sec and used to check the condition of the car. This includes temperature, tire pressure, gas meter ...  
 3. Then there is the car booking information which, when aggregated, is used to make business decisions in near real-time.  
 The schema of these messages is shown in the following figure:  
-<img src="./images/Schema.jpg" width="500">
+<img src="./images/Schema.jpg" width="1000">
 
 # Pipeline
 The code here implements the pipeline shown below. It consists of ingesting the data from the source using Kafka, and then using Kafka Streaming to load the navigation data into Cassandra, a key-sorted key-value store where they are stored by car ID and in descending time order for easy retrieval. The booking information is also processed using Kafka Streaming to return the bookings that occurred per hour and per spatial block. This information will help the company make real-time decisions about whether certain blocks are getting higher demand than usual and therefore send more vehicles to that location.  
-<img src="./images/Pipeline.jpg" width="500">
+<img src="./images/Pipeline.jpg" width="1000">
 
 # Requirements
 I used:  
 Kafka 0.10.1.1   
 Cassandra 3.11.0  
 Datastax java cassandra-driver (https://github.com/datastax/java-driver)  
-Jackson libraries for JSON Parsing (https://github.com/FasterXML/jackson)
+Jackson libraries for JSON Parsing (https://github.com/FasterXML/jackson)  
 JDK 8  
-Flask (pip install Flask)
-Tornado (pip install tornado)
+Flask (pip install Flask)  
+Tornado (pip install tornado)  
 
 # Directory
 The directory structure for this repo looks like this:
