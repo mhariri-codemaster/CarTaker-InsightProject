@@ -11,14 +11,16 @@ This is a message handling system for autonomous vehicles. Autonomous vehicles a
 This project is the implementation of a system that is able to receive some of that information, process it and store it in a form that enables quick access to relevant information.
 
 # Model
-I assume a simple model for the types of messages received. First there are navigation sensor data that need to be received every 10 ms to be able to drive the car safely. This includes the GPS position and speed information, Radar, Ladar, Ultrasound ...  
-Then there are the vehicle condition sensor data received every 1 sec and used to check the condition of the car. This includes temperature, tire pressure, gas meter ...  
-Then there is the car booking information which, when aggregated, is used to make business decisions in near real-time. The schema of these messages is shown in the following figure:  
-<img src="./images/Schema.jpg" width="150">
+I assumed a simple model for the types of messages received.  
+1. First there are navigation sensor data that need to be received every 10 ms to be able to drive the car safely. This includes the GPS position and speed information, Radar, Ladar, Ultrasound ...  
+2. Then there are the vehicle condition sensor data received every 1 sec and used to check the condition of the car. This includes temperature, tire pressure, gas meter ...  
+3. Then there is the car booking information which, when aggregated, is used to make business decisions in near real-time.  
+The schema of these messages is shown in the following figure:  
+<img src="./images/Schema.jpg" width="500">
 
 # Pipeline
 The code here implements the pipeline shown below. It consists of ingesting the data from the source using Kafka, and then using Kafka Streaming to load the navigation data into Cassandra, a key-sorted key-value store where they are stored by car ID and in descending time order for easy retrieval. The booking information is also processed using Kafka Streaming to return the bookings that occurred per hour and per spatial block. This information will help the company make real-time decisions about whether certain blocks are getting higher demand than usual and therefore send more vehicles to that location.  
-<img src="./images/Pipeline.jpg" width="150">
+<img src="./images/Pipeline.jpg" width="500">
 
 # Requirements
 I used:  
