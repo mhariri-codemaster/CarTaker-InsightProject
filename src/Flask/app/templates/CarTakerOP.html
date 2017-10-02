@@ -1,0 +1,43 @@
+{% extends "Mybase.html" %}
+{% block CarTakerOP %}
+<div class="container">
+     <div class="starter-template">
+       <div class="row" style="height:100vh;">
+               <div class="col-md-10 col-md-offset-1">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th>VID</th>
+                         <th>Date</th>
+			 <th>Time</th>
+                         <th>Latitude</th>
+                         <th>Longitude</th>
+                         <th>Latitude_Speed</th>
+                         <th>Longitude_Speed</th>
+                         <th>Radar</th>
+                         <th>Ladar</th>
+                         <th>Ultrasound</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       {% for val in output %}
+                       <tr>
+                         <td>{{val.VID}}</td>
+                         <td>{{val.Date}}</td>
+                         <td>{{val.Time}}</td>
+                         <td>{{val.Latitude}}</td>
+                         <td>{{val.Longitude}}</td>
+                         <td>{{val.Latitude_Speed}}</td>
+                         <td>{{val.Longitude_Speed}}</td>
+                         <td>{{val.Radar}}</td>
+                         <td>{{val.Ladar}}</td>
+                         <td>{{val.Ultrasound}}</td>
+                       </tr>
+                       {% endfor %}
+                     </tbody>
+                   </table>
+               </div>
+       </div>
+     </div>
+   </div>
+{% endblock %}

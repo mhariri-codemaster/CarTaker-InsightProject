@@ -1,0 +1,1 @@
+{"KafkaServers":"0.0.0.0:9092,0.0.0.1:9092", "CassandraMainServer":"0.0.0.2"}

@@ -1,0 +1,17 @@
+{% extends "Mybase.html" %}
+{% block CarTaker %}
+       <div class="row" style="height:100vh;">
+               <div class="col-md-4 col-md-offset-4" style="margin-top:10vh;">
+                       <form action="CarTaker" method="POST">
+                               <div class="form-group text-center">
+                                       <label style="font-weight:300; font-size:36px;">Type in vehicle ID</label>
+                                       <br /><br />
+                                       <input type="text" class="form-control" id="VID" name="VID" placeholder="0INLIO4II1">
+                                       <br /><br />
+
+                                       <button type="submit" value="Send" name="VID-container" class="btn btn-default id-submit">Submit</button>
+                               </div>
+                       </form>
+               </div>
+       </div>
+{% endblock %}

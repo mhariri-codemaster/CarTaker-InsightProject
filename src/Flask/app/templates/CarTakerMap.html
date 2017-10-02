@@ -1,0 +1,26 @@
+{% extends "Mybase2.html" %}
+{% block CarTakerMap %}
+
+<canvas id="myCanvas" width="500" height="500"
+style="background: url('/static/SFM.jpg'); background-size: 500px 500px; background-repeat: no-repeat;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var img = document.getElementById("Map");
+ctx.fillStyle = 'red';
+
+{% for val in output %}
+ctx.beginPath();
+Lat = {{val.Latitude}};
+Lng = {{val.Longitude}};
+ctx.arc(Lat,Lng,1,0,2*Math.PI);
+ctx.stroke();
+ctx.fill();                 
+{% endfor %}
+
+</script> 
+
+{% endblock %}

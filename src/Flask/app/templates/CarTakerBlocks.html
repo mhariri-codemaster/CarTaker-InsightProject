@@ -1,0 +1,32 @@
+{% extends "Mybase3.html" %}
+{% block CarTakerBlocks %}
+
+<div class="container">
+     <div class="starter-template">
+       <div class="row" style="height:100vh;">
+               <div class="col-md-10 col-md-offset-1">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th>Block</th>
+                         <th>Date</th>
+			 <th>Time</th>
+                         <th>Count</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       {% for val in output %}
+                       <tr>
+                         <td>{{val.Block}}</td>
+                         <td>{{val.Date}}</td>
+                         <td>{{val.Time}}</td>
+                         <td>{{val.Count}}</td>
+                       </tr>
+                       {% endfor %}
+                     </tbody>
+                   </table>
+               </div>
+       </div>
+     </div>
+   </div>
+{% endblock %}
