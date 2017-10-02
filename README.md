@@ -25,7 +25,8 @@ The schema of these messages is shown in the following figure:
 ## Pipeline
 The code here implements the pipeline shown below. It consists of ingesting the data from the source using Kafka, and then using Kafka Streaming to load the navigation data into Cassandra, a key-sorted key-value store where they are stored by car ID and in descending time order for easy retrieval. The booking information is also processed using Kafka Streaming to return the bookings that occurred per hour and per spatial block. This information will help the company make real-time decisions about whether certain blocks are getting higher demand than usual and therefore send more vehicles to that location.  
 <img src="./images/Pipeline.jpg" width="1000">
-
+Note: In this work, we demonstrate how to write sensor data directly into Cassandra and how to process the booking data before storing. In general, it is important to store the booking data before processing to maintain a full account of booking events. The code to do that is very similar to the one used to store the sensor data and is not repeated here.
+ 
 ## Requirements
 Kafka 0.10.1.1   
 Cassandra 3.11.0  
