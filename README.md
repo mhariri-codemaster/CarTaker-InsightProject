@@ -1,10 +1,10 @@
 # Table of Contents
-1. [Introduction](README.md#Introduction)
-2. [Model](README.md#Model)
-3. [Pipeline](README.md#Pipeline)
-4. [Requirements](README.md#Requirements)
-5. [Directory](README.md#Directory)
-6. [Additional](README.md#Additional)
+1. [Introduction](#Introduction)
+2. [Model](#Model)
+3. [Pipeline](#Pipeline)
+4. [Requirements](#Requirements)
+5. [Directory](#Directory)
+6. [Additional](#Additional)
 
 # Introduction
 This is a message handling system for autonomous vehicles. Autonomous vehicles are the future of transportation and they will be producing a lot of data. According to some sources, it is expected that around 4TB of data will be produced per day per car. This includes information from the car GPS, Radar, Ladar, Camera and so on. That information (or some of it) will be sent to data-centers that will then be able to navigate the cars. For a service company with a fleet of many of those cars, a data management system is needed to handle all the data received.  
