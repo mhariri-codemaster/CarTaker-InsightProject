@@ -8,7 +8,11 @@
 
 ## Introduction
 This is a message handling system for autonomous vehicles. Autonomous vehicles are the future of transportation and they will be producing a lot of data. According to some sources, it is expected that around 4TB of data will be produced per day per car. This includes information from the car GPS, Radar, Ladar, Camera and so on. That information (or some of it) will be sent to data-centers that will then be able to navigate the cars. For a service company with a fleet of many of those cars, a data management system is needed to handle all the data received.  
-This project is the implementation of a system that is able to receive some of that information, process it and store it in a form that enables quick access to relevant information.
+This project is the implementation of a system that is able to receive some of that information, process it and store it in a form that enables quick access to relevant information.  
+The project slides can be found here:
+http://bit.ly/CarTaker  
+The project website can be found here:
+http://www.cartaker-insightproject.com
 
 ## Model
 I assumed a simple model for the types of messages received.  
@@ -23,7 +27,6 @@ The code here implements the pipeline shown below. It consists of ingesting the 
 <img src="./images/Pipeline.jpg" width="1000">
 
 ## Requirements
-I used:  
 Kafka 0.10.1.1   
 Cassandra 3.11.0  
 Datastax java cassandra-driver (https://github.com/datastax/java-driver)  
